@@ -5,50 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PropathCraft</title>
   <style>
+    /* General styles */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
+      color: #333;
     }
+
+    /* Header */
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      background-color: #f5f5f5;
-      padding: 10px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #1e3d59;
+      color: #fff;
     }
+
     #logo {
-      height: 100px; /* Adjust size */
+      height: 80px;
     }
+
     nav a {
-      margin-left: 15px;
+      color: #fff;
       text-decoration: none;
-      color: #333;
+      margin-left: 20px;
       font-weight: bold;
+      transition: color 0.3s;
     }
+
+    nav a:hover {
+      color: #ff6e40;
+    }
+
+    /* Hero section */
+    .hero {
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #1e3d59;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #ff6e40;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .hero .btn:hover {
+      background-color: #ff3b00;
+    }
+
+    /* Sections */
     section {
-      padding: 50px 20px;
-      max-width: 900px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
     }
+
+    section h2 {
+      color: #1e3d59;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.1rem;
+    }
+
+    /* Contact */
+    #contact a {
+      color: #1e3d59;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Footer */
     footer {
-      background-color: #333;
+      background-color: #1e3d59;
       color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
+      margin-top: 30px;
     }
-    h1, h2 {
-      color: #222;
+
+    /* Responsive */
+    @media(max-width: 768px){
+      header {
+        flex-direction: column;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header with logo and navigation -->
+  <!-- Header -->
   <header>
-    <img src="logo.png" alt="PropathCraft Logo" id="logo">
+    <img src="logo.png.png" alt="PropathCraft Logo" id="logo">
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -56,31 +130,30 @@
     </nav>
   </header>
 
-  <!-- Home Section -->
-  <section id="home">
+  <!-- Hero Section -->
+  <section class="hero" id="home">
     <h1>Welcome to PropathCraft</h1>
-    <p><strong>Your Career, Our Craft</strong></p>
-    <p>We help you create professional resumes and career solutions that get noticed by employers.</p>
+    <p>Your Career, Our Craft – Professional Resumes & Career Guidance</p>
+    <a href="#contact" class="btn">Get in Touch</a>
   </section>
 
   <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>At PropathCraft, our mission is to craft high-quality resumes, CVs, and career guidance for ambitious professionals. We focus on clarity, professionalism, and ATS-friendly designs.</p>
+    <p>At PropathCraft, our mission is to craft high-quality resumes, CVs, and career guidance for ambitious professionals. We focus on clarity, professionalism, and ATS-friendly designs to help you land your dream job.</p>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:info@propathcraft.com">info@propathcraft.com</a></p>
-    <p>Phone: +91-1234567890</p>
+    <p>Email: <a href="mailto:infopropathcraft@.com">info@propathcraft.com</a></p>
+    <p>Phone: +91-7972422618</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 PropathCraft. All rights reserved.</p>
+    &copy; 2025 PropathCraft. All Rights Reserved.
   </footer>
 
 </body>
 </html>
-
