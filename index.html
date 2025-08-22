@@ -185,11 +185,7 @@
     </section>
 
     <!-- Services (SLIDESHOW UNDER TITLE) -->
-    <section id="services">
-      <h1 class="page-title">Our Services</h1>
-      <p class="subtitle">Swipe/slide to view plans</p>
-
-    <div class="service-list">
+ <div class="service-list">
   <!-- Basic Plan -->
   <div class="service-card">
     <img src="resume-basic.jpg" alt="Basic Resume Service">
@@ -218,13 +214,6 @@
   </div>
 </div>
 
-        <button class="nav-btn left"  onclick="moveSlide(-1)">❮</button>
-        <button class="nav-btn right" onclick="moveSlide(1)">❯</button>
-      </div>
-
-      <footer>© 2025 ProPathCraft. All rights reserved.</footer>
-    </section>
-
     <!-- Audience Feedback -->
     <section id="feedback">
       <h1 class="page-title">Audience Feedback</h1>
@@ -243,6 +232,14 @@
     <section id="about">
       <h1 class="page-title">About Us</h1>
       <p class="subtitle">We craft ATS-friendly resumes and help you present your best professional self.</p>
+     <p>ProPathCraft was founded with a single motive: to help job seekers craft professional,
+     ATS-friendly resumes that truly reflect their career journey. We believe every career path
+     deserves a crafted resume that stands out.</p>
+
+  <h3>Contact Us</h3>
+  <p>Email: support@propathcraft.com</p>
+  <p>Phone: +91 7972422618</p>
+  <p>Website: www.propathcraft.com</p> 
       <footer>© 2025 ProPathCraft. All rights reserved.</footer>
     </section>
   </main>
@@ -278,17 +275,13 @@
       index = (i + total) % total;
       slidesEl.style.transform = `translateX(${-index * 100}%)`;
     }
-    function moveSlide(step) { goTo(index + step); }
-
-    function startAuto() { timer = setInterval(() => moveSlide(1), 4000); }
-    function pauseAuto() { if (timer) clearInterval(timer); }
-    function resumeAuto() { startAuto(); }
-
+    
     // Init
     startAuto();
   </script>
 </body>
 </html>
+
 
 
 
