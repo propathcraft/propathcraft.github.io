@@ -151,12 +151,12 @@ header {
 /* 🎨 Images in Slides */
 .slide img {
   width: 100%;
-  height: auto;             /* keeps proportions */
-  max-height: 300px;        /* consistent size */
-  object-fit: cover;        /* crop neatly */
-  object-position: center;  /* focus center */
+  max-height: 240px;   /* fixed height for all */
+  object-fit: contain; /* shows full image */
+  object-position: center;
   border-radius: 8px;
   margin-bottom: 12px;
+  background: #f9f9f9; /* add background so empty space looks neat */
 }
 
 /* 💻 Different image size for desktop */
@@ -165,6 +165,7 @@ header {
     max-height: 240px;      /* slightly smaller on laptops */
   }
 }
+
 
 
 
