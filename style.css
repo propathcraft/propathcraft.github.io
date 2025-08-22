@@ -140,6 +140,14 @@ background: #f9f9f9;
   margin-bottom: 12px;
 }
 
+/* 💻 Desktop → crop for uniform look */
+@media (min-width: 768px) {
+  .slide img {
+    height: 220px;   /* slightly taller for desktop */
+    object-fit: cover;
+    background: none;
+  }
+}
 
 
 
