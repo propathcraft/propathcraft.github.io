@@ -133,10 +133,13 @@ header {
 .slide img {
   width: 100%;
   height: 200px;       /* fixed uniform height */
-  object-fit: cover;   /* keeps proportions, fills card */
+object-fit: contain;
+background: #f9f9f9;
+ /* keeps proportions, fills card */
   border-radius: 8px;
   margin-bottom: 12px;
 }
+
 
 
 
