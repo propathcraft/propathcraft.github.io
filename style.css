@@ -86,27 +86,36 @@ header {
 
 /* ==== Services Section ==== */
 /* 📱 Mobile: Horizontal scroll */
+/* ==== Services Section ==== */
+#services {
+  padding: 30px 0;
+  background: #f7f8fb;
+  text-align: center;
+}
+
+/* 📱 Mobile: Horizontal scroll */
 .slides {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   overflow-x: auto;
   padding: 20px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
+.slides::-webkit-scrollbar { display: none; }
 
+/* Each slide card */
 .slide {
-  flex: 0 0 85%;  /* mobile: full card takes most width */
+  flex: 0 0 85%;  /* mobile: one card fills width */
+  max-width: 350px;
   background: #fff;
   padding: 16px;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* ✨ Hover effect (desktop only) */
 @media (hover: hover) {
   .slide:hover {
     transform: translateY(-6px) scale(1.02);
@@ -114,41 +123,59 @@ header {
   }
 }
 
-/* 💻 Laptop/Desktop: Auto-fit grid */
-@media (min-width: 768px) {
+/* Service Images */
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+/* Headings and text */
+.slide h2 {
+  font-size: 20px;
+  margin: 8px 0;
+  color: #0a1f44;
+}
+.slide p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Buttons inside slides */
+.slide .call-btn,
+.slide .wa-btn {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.slide .wa-btn {
+  background: #25D366;
+  color: #fff;
+}
+.slide .call-btn {
+  background: #0a1f44;
+  color: #fff;
+}
+
+/* 💻 Desktop: grid instead of scroll */
+@media (min-width: 1024px) {
   .slides {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    overflow: visible;  /* no horizontal scroll */
+    overflow: visible;
   }
   .slide {
     flex: unset;
     max-width: 100%;
-    padding: 20px;
   }
 }
-
-/* 🎨 Service Images */
-.slide img {
-  width: 100%;
-  height: 200px;       /* fixed uniform height */
-object-fit: contain;
-background: #f9f9f9;
- /* keeps proportions, fills card */
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-/* 💻 Desktop → crop for uniform look */
-@media (min-width: 768px) {
-  .slide img {
-    height: 220px;   /* slightly taller for desktop */
-    object-fit: cover;
-    background: none;
-  }
-}
-
 
 
 
