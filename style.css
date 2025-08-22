@@ -108,17 +108,18 @@ header {
 
 
 /* ==== Horizontal Services Section ==== */
+/* 📱 Mobile: Horizontal scroll */
 .slides {
   display: flex;
   gap: 20px;
-  overflow-x: auto;  /* horizontal scroll */
+  overflow-x: auto;
   padding: 20px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
 .slide {
-  flex: 0 0 80%;  /* each slide takes 80% of the viewport */
+  flex: 0 0 80%;  /* mobile: large cards */
   background: #fff;
   padding: 16px;
   border-radius: 12px;
@@ -127,12 +128,32 @@ header {
   text-align: center;
 }
 
+/* 💻 Laptop/Desktop: Grid of cards */
+@media (min-width: 768px) {
+  .slides {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 20px;
+    overflow: visible;  /* ✅ remove scrolling */
+  }
+
+  .slide {
+    flex: unset;   /* reset flex */
+    max-width: 350px;
+    margin: auto;
+  }
+}
+
+/* 🎨 Images */
 .slide img {
   width: 100%;
-  height: auto;
+  max-height: 220px;  /* controlled height */
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 12px;
 }
+
+
 
 
 
