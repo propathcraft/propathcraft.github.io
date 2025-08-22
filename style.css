@@ -68,13 +68,7 @@ header {
   text-align: center;
 }
 
-.service-card img {
-  width: 100%;
-  max-height: 300px;   /* ✅ keeps images professional size */
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
+
 
 /* WhatsApp Button */
 .wa-float {
@@ -154,10 +148,13 @@ header {
 }
 
 /* 🎨 Images */
+/* 🎨 Images in Slides */
 .slide img {
   width: 100%;
-  max-height: 220px;   /* mobile image size */
-  object-fit: cover;
+  height: auto;             /* keeps proportions */
+  max-height: 300px;        /* consistent size */
+  object-fit: cover;        /* crop neatly */
+  object-position: center;  /* focus center */
   border-radius: 8px;
   margin-bottom: 12px;
 }
@@ -165,9 +162,12 @@ header {
 /* 💻 Different image size for desktop */
 @media (min-width: 768px) {
   .slide img {
-    max-height: 180px; /* desktop: compact */
+    max-height: 240px;      /* slightly smaller on laptops */
   }
 }
+
+
+
 
 
 
