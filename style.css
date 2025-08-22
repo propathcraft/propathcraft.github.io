@@ -94,7 +94,6 @@ header {
 }
 
 /* 📱 Mobile: Horizontal scroll */
-
 .slides {
   display: flex;
   gap: 20px;
@@ -177,6 +176,8 @@ header {
     max-width: 100%;
   }
 }
+
+
 
 
 
