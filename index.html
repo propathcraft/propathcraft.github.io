@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ProPathCraft - Resume Services</title>
-  <style>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Arial, sans-serif;
@@ -187,30 +189,45 @@
     <!-- Services (SLIDESHOW UNDER TITLE) -->
 <section id="services">
   <h1 class="page-title">Our Services</h1>
-  <p class="subtitle">Select a plan to learn more</p>
+  <p class="subtitle">Swipe or use arrows to view plans</p>
 
-  <div class="service-list">
-    <div class="service-card">
+  <div class="manual-slider">
+    <div class="slide active">
       <img src="basic.jpg" alt="Basic Resume Service">
       <h3>Basic Resume Service</h3>
-      <a href="basic.html">View Details</a>
+      <a class="wa-float"
+         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Basic%20Resume%20Service."
+         target="_blank" rel="noopener">
+         💬 Chat on WhatsApp
+      </a>
     </div>
 
-    <div class="service-card">
+    <div class="slide">
       <img src="standard.jpg" alt="Standard Resume Service">
       <h3>Standard Resume Service</h3>
-      <a href="standard.html">View Details</a>
+      <a class="wa-float"
+         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Standard%20Resume%20Service."
+         target="_blank" rel="noopener">
+         💬 Chat on WhatsApp
+      </a>
     </div>
 
-    <div class="service-card">
+    <div class="slide">
       <img src="premium.jpg" alt="Premium Resume Service">
       <h3>Premium Resume Service</h3>
-      <a href="premium.html">View Details</a>
+      <a class="wa-float"
+         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Premium%20Resume%20Service."
+         target="_blank" rel="noopener">
+         💬 Chat on WhatsApp
+      </a>
     </div>
   </div>
 
-  <footer>© 2025 ProPathCraft. All rights reserved.</footer>
+  <!-- Navigation buttons -->
+  <button class="nav-btn left" onclick="moveSlide(-1)">❮</button>
+  <button class="nav-btn right" onclick="moveSlide(1)">❯</button>
 </section>
+
 
     <!-- Audience Feedback -->
     <section id="feedback">
@@ -264,21 +281,11 @@
       if (window.innerWidth < 1024) sidebar.classList.remove('active');
     }
 
-    // Slider logic
-    let index = 0, timer = null;
-    const slidesEl = document.getElementById('slides');
-    const total = slidesEl.children.length;
-
-    function goTo(i) {
-      index = (i + total) % total;
-      slidesEl.style.transform = `translateX(${-index * 100}%)`;
-    }
     
-    // Init
-    startAuto();
   </script>
 </body>
 </html>
+
 
 
 
