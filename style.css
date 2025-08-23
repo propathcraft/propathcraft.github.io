@@ -1,5 +1,5 @@
 /* ==== General Styles ==== */
-/* ==== General Styles ==== */
+
 body {
   font-family: Arial, sans-serif;
   background: #fdfdfd;
@@ -86,7 +86,7 @@ header {
 
 /* ==== Services Section ==== */
 /* 📱 Mobile: Horizontal scroll */
-/* ==== Services Section ==== */
+
 #services {
   padding: 30px 0;
   background: #f7f8fb;
@@ -178,7 +178,7 @@ header {
 }
 
 /* ==== Topbar ==== */
-/* ==== Topbar ==== */
+
 .topbar {
   height: 70px;
   background: #0a1f44;
@@ -273,6 +273,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
