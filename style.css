@@ -177,6 +177,78 @@ header {
   }
 }
 
+/* ==== Topbar ==== */
+.topbar {
+  height: 70px;
+  background: #0a1f44;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img { height: 50px; }
+
+.brand-title { font-weight: 700; font-size: 20px; }
+.slogan { font-size: 14px; color: #d9e3f0; }
+
+.welcome { font-size: 16px; font-weight: 500; }
+
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  display: none; /* only visible on mobile */
+}
+
+/* ==== Sidebar ==== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -220px; /* hidden initially on mobile */
+  width: 220px;
+  height: 100%;
+  background: #141a24;
+  padding-top: 70px;
+  transition: left 0.3s ease;
+  z-index: 1002;
+}
+
+.sidebar.active { left: 0; }
+
+.sidebar a {
+  display: block;
+  padding: 12px 16px;
+  margin: 8px;
+  color: #e6ecff;
+  text-decoration: none;
+  border-radius: 8px;
+  background: #1b2432;
+  font-weight: 600;
+}
+
+.sidebar a:hover { background: #253147; }
+
+/* Desktop: Sidebar always visible */
+@media(min-width:1024px){
+  .sidebar { left: 0; }
+  .hamburger { display: none; }
+  main { margin-left: 220px; } /* push content right */
+}
+
+/* Mobile: show hamburger */
+@media(max-width:1023px){
+  .hamburger { display: block; color: #fff; }
+}
 
 
 
