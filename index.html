@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ProPathCraft - Resume Services</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <style>
+    /* General Reset */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Arial, sans-serif;
@@ -13,9 +14,7 @@
       color: #1e2a3a;
       min-height: 100vh;
     }
-/* ... rest of your CSS ... */
-  </style>
-</head>
+
     /* Topbar */
     .topbar {
       height: 60px;
@@ -65,7 +64,7 @@
     }
     .sidebar a:hover { background: #253147; }
 
-    /* Main wrapper */
+    /* Main Wrapper */
     .wrapper {
       max-width: 1100px;
       margin: 0 auto;
@@ -90,7 +89,7 @@
     }
 
     /* Slider */
-    .slider {
+    .manual-slider {
       position: relative;
       width: 100%;
       max-width: 880px;
@@ -104,10 +103,14 @@
       display: flex;
       transition: transform 0.6s ease-in-out;
     }
+    .slides .slide {
+      flex-shrink: 0;
+      width: 100%;
+      text-align: center;
+    }
     .slides img {
       width: 100%;
-      flex-shrink: 0;
-      display: block;
+      border-bottom: 2px solid #eee;
     }
     .nav-btn {
       position: absolute;
@@ -126,7 +129,7 @@
     .nav-btn.left { left: 10px; }
     .nav-btn.right { right: 10px; }
 
-    /* WhatsApp floating button */
+    /* WhatsApp Floating Button */
     .wa-float {
       position: fixed;
       right: 16px;
@@ -150,7 +153,7 @@
       font-size: 14px;
     }
 
-    /* Larger screens: optional fixed sidebar */
+    /* Larger Screens: Optional Fixed Sidebar */
     @media (min-width: 1024px) {
       .sidebar { left: 0; }
       .topbar .hamburger { visibility: hidden; }
@@ -183,52 +186,40 @@
     <!-- Home -->
     <section id="home" class="active">
       <h1 class="page-title">Welcome to ProPathCraft</h1>
-      <p class="subtitle">Your Career, Our Path.</p>
+      <p class="subtitle">Your Career, Our Craft.</p>
+      <p>At ProPathCraft, we specialize in creating professional, ATS-friendly resumes that help you stand out in the competitive job market. Whether you're a fresher or an experienced professional, our services are tailored to meet your career needs.</p>
       <footer>© 2025 ProPathCraft. All rights reserved.</footer>
     </section>
 
-    <!-- Services (SLIDESHOW UNDER TITLE) -->
-<section id="services">
-  <h1 class="page-title">Our Services</h1>
-  <p class="subtitle">Swipe or use arrows to view plans</p>
+    <!-- Services -->
+    <section id="services">
+      <h1 class="page-title">Our Services</h1>
+      <p class="subtitle">Swipe or use arrows to view plans</p>
 
-  <div class="manual-slider">
-    <div class="slide active">
-      <img src="basic.jpg" alt="Basic Resume Service">
-      <h3>Basic Resume Service</h3>
-      <a class="wa-float"
-         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Basic%20Resume%20Service."
-         target="_blank" rel="noopener">
-         💬 Chat on WhatsApp
-      </a>
-    </div>
+      <div class="manual-slider">
+        <div class="slides">
+          <div class="slide active">
+            <img src="basic.jpg" alt="Basic Resume Service">
+            <h3>Basic Resume Service</h3>
+            <a class="wa-float" href="https://wa.me/917972422618?text=Hello%2C%20I'm%20interested%20in%20the%20Basic%20Resume%20Service.%20Can%20I%20get%20more%20information%3F" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+          </div>
+          <div class="slide">
+            <img src="standard.jpg" alt="Standard Resume Service">
+            <h3>Standard Resume Service</h3>
+            <a class="wa-float" href="https://wa.me/917972422618?text=Hello%2C%20I'm%20interested%20in%20the%20Standard%20Resume%20Service.%20Can%20I%20get%20more%20information%3F" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+          </div>
+          <div class="slide">
+            <img src="premium.jpg" alt="Premium Resume Service">
+            <h3>Premium Resume Service</h3>
+            <a class="wa-float" href="https://wa.me/917972422618?text=Hello%2C%20I'm%20interested%20in%20the%20Premium%20Resume%20Service.%20Can%20I%20get%20more%20information%3F" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
 
-    <div class="slide">
-      <img src="standard.jpg" alt="Standard Resume Service">
-      <h3>Standard Resume Service</h3>
-      <a class="wa-float"
-         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Standard%20Resume%20Service."
-         target="_blank" rel="noopener">
-         💬 Chat on WhatsApp
-      </a>
-    </div>
-
-    <div class="slide">
-      <img src="premium.jpg" alt="Premium Resume Service">
-      <h3>Premium Resume Service</h3>
-      <a class="wa-float"
-         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Premium%20Resume%20Service."
-         target="_blank" rel="noopener">
-         💬 Chat on WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <!-- Navigation buttons -->
-  <button class="nav-btn left" onclick="moveSlide(-1)">❮</button>
-  <button class="nav-btn right" onclick="moveSlide(1)">❯</button>
-</section>
-
+      <!-- Navigation buttons -->
+      <button class="nav-btn left" onclick="moveSlide(-1)">❮</button>
+      <button class="nav-btn right" onclick="moveSlide(1)">❯</button>
+    </section>
 
     <!-- Audience Feedback -->
     <section id="feedback">
@@ -248,47 +239,12 @@
     <section id="about">
       <h1 class="page-title">About Us</h1>
       <p class="subtitle">We craft ATS-friendly resumes and help you present your best professional self.</p>
-     <p>ProPathCraft was founded with a single motive: to help job seekers craft professional,
-     ATS-friendly resumes that truly reflect their career journey. We believe every career path
-     deserves a crafted resume that stands out.</p>
+      <p>ProPathCraft was founded with a single motive: to help job seekers craft professional, ATS-friendly resumes that truly reflect their career journey. We believe every career path deserves a crafted resume that stands out.</p>
 
-  <h3>Contact Us</h3>
-  <p>Email: infopropathcraft@gmail.com</p>
-  <p>Phone: +91 7972422618</p>
-  <p>Website: www.propathcraft.com</p> 
-      <footer>© 2025 ProPathCraft. All rights reserved.</footer>
-    </section>
-  </main>
-
-  <!-- WhatsApp floating chat -->
-  <a class="wa-float"
-     href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20resume%20services."
-     target="_blank" rel="noopener">
-     💬 Chat on WhatsApp
-  </a>
-
-  <script>
-    // Sidebar toggle (mobile)
-    const sidebar = document.getElementById('sidebar');
-    function toggleSidebar() {
-      sidebar.classList.toggle('active');
-    }
-
-    // Section switching
-    function showSection(id) {
-      document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      // close sidebar on mobile after navigation
-      if (window.innerWidth < 1024) sidebar.classList.remove('active');
-    }
-
-    
-  </script>
-</body>
-</html>                        
-
-
-
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:infopropathcraft@gmail.com">infopropathcraft@gmail.com</a></p
+::contentReference[oaicite:0]{index=0}
+ 
 
 
 
