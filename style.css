@@ -171,10 +171,10 @@ header {
 }
 
 
-.brand img { height: 50px; }
-.brand-title { font-weight: 700; font-size: 20px; }
-.slogan { font-size: 14px; color: #d9e3f0; }
-.welcome { font-size: 16px; font-weight: 500; }
+.brand img { height: 40px; }
+.brand-title { font-weight: 700; font-size: 18px; }
+.slogan { font-size: 12px; color: #d9e3f0; }
+.welcome { font-size: 1px; font-weight: 500; }
 .hamburger { font-size: 28px; cursor: pointer; display: none; }
 
 /* ==== Sidebar ==== */
@@ -266,6 +266,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
