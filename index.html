@@ -30,114 +30,6 @@
   </nav>
 
   <!-- Main Content -->
-  <main>
-    <!-- Home Section -->
-    <section id="home" style="display:none">
-      <h1>Welcome to ProPathCraft</h1>
-      <p>Your career, our craft. We create professional resumes that get you noticed.</p>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-      <h1>Our Services</h1>
-      <p>Swipe or use arrows to view our service plans.</p>
-
-      <div class="slides">
-        <!-- Basic Service -->
-        <div class="slide">
-          <img src="basic.jpg" alt="Basic Resume Service">
-          <h2>Basic Resume Service</h2>
-          <a class="wa-float"
-             href="https://wa.me/917972422618?text=Hello%2C%20I'm%20interested%20in%20the%20Basic%20Resume%20Service."
-             target="_blank">💬 Chat on WhatsApp</a>
-        </div>
-
-        <!-- Standard Service -->
-        <div class="slide">
-          <img src="standard.jpg" alt="Standard Resume Service">
-          <h2>Standard Resume Service</h2>
-          <a class="wa-float"
-             href="https://wa.me/917972422618?text=Hello%2C%20I'm%20interested%20in%20the%20Standard%20Resume%20Service."
-             target="_blank">💬 Chat on WhatsApp</a>
-        </div>
-
-        <!-- Premium Service -->
-        <div class="slide">
-          <img src="premium.jpg" alt="Premium Resume Service">
-          <h2>Premium Resume Service</h2>
-          <a class="wa-float"
-             href="https://wa.me/917972422618?text=Hello%2C%20I'm%20interested%20in%20the%20Premium%20Resume%20Service."
-             target="_blank">💬 Chat on WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feedback Section -->
-    <section id="feedback" style="display:none">
-      <h1>Feedback & Rating</h1>
-      <p>Customer testimonials coming soon.</p>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" style="display:none">
-      <h1>About Us</h1>
-      <p>ProPathCraft helps job seekers craft ATS-friendly resumes and stand out professionally.</p>
-      <p>Email: infopropathcraft@gmail.com</p>
-      <p>Phone: +91 7972422618</p>
-      <p>Website: www.propathcraft.com</p>
-    </section>
-  </main>
-
-  <!-- Floating WhatsApp Button -->
-  <a class="wa-float"
-     href="https://wa.me/917972422618?text=Hello%2C%20I'm%20interested%20in%20your%20resume%20services."
-     target="_blank">💬 Chat on WhatsApp</a>
-
-  <!-- ===== JavaScript ===== -->
-<script>
-const sidebar = document.getElementById('sidebar');
-
-// Toggle sidebar on mobile
-function toggleSidebar() {
-  sidebar.classList.toggle('active');
-}
-
-// Show selected section
-function showSection(id) {
-  document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
-  document.getElementById(id).style.display = 'block';
-  
-  if(window.innerWidth < 1024) sidebar.classList.remove('active');
-}
-
-// Optional: show Services page by default
-document.addEventListener("DOMContentLoaded", function(){
-  showSection('services');
-});
-</script>
-
-</script>
-</body>
-</html>
-
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="hamburger" onclick="toggleSidebar()">☰</div>
-    <div class="brand">
-      <img src="logo.png" alt="ProPathCraft Logo">
-      <div class="brand-title">ProPathCraft</div>
-    </div>
-  </div>
-
-  <!-- Sidebar -->
-  <nav id="sidebar" class="sidebar">
-    <a href="#" onclick="showSection('home')">🏠 Home</a>
-    <a href="#" onclick="showSection('services')">📄 Our Services</a>
-    <a href="#" onclick="showSection('feedback')">🗣 Audience Feedback</a>
-    <a href="#" onclick="showSection('rating')">⭐ Rating & Feedback</a>
-    <a href="#" onclick="showSection('about')">ℹ️ About Us</a>
-  </nav>
-
   <!-- Main -->
   <main class="wrapper">
     <!-- Home -->
@@ -202,6 +94,40 @@ document.addEventListener("DOMContentLoaded", function(){
       <p>Email: <a href="mailto:infopropathcraft@gmail.com">infopropathcraft@gmail.com</a></p
 ::contentReference[oaicite:0]{index=0}
  
+<!-- ===== WhatsApp floating button ===== -->
+  <a class="wa-float" href="https://wa.me/917972422618" target="_blank">💬 Chat on WhatsApp</a>
+
+  <!-- ===== JavaScript ===== -->
+<script>
+const sidebar = document.getElementById('sidebar');
+
+// Toggle sidebar on mobile
+function toggleSidebar() {
+  sidebar.classList.toggle('active');
+}
+
+// Show selected section
+function showSection(id) {
+  document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+  
+  if(window.innerWidth < 1024) sidebar.classList.remove('active');
+}
+
+// Optional: show Services page by default
+document.addEventListener("DOMContentLoaded", function(){
+  showSection('services');
+});
+</script>
+
+</script>
+</body>
+</html>
+
+
+  
+ 
+
 
 
 
