@@ -226,6 +226,7 @@ header {
   }
   main {
     margin-left: 220px; /* push content to right */
+    padding-top: 70px;
   }
   .hamburger { display: none; } /* hide hamburger on desktop */
 }
@@ -265,6 +266,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
