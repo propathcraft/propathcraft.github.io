@@ -151,30 +151,33 @@ header {
 }
 
 /* ==== Topbar ==== */
-
+/* Topbar */
 .topbar {
-  height: 70px;          /* fixed height */
-  background: #0a1f44;   /* blue topbar */
-  color: #fff;
+  height: 70px; /* Fixed height for the top bar */
+  background: #0a1f44; /* Blue background */
   display: flex;
-  align-items: center;    /* vertically center content */
-  justify-content: space-between;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
   padding: 0 20px;
   position: sticky;
   top: 0;
   z-index: 1003;
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+
+.brand img {
+  height: 50px; /* Set the logo height to fit within the top bar */
+  width: auto; /* Maintain the aspect ratio */
+}
+
+/* Optional: Adjust the welcome text position */
+.welcome {
+  position: absolute;
+  bottom: 10px; /* Position it near the bottom of the top bar */
+  color: #fff;
+  font-size: 14px;
 }
 
 
-.brand img { height: 40px; }
-.brand-title { font-weight: 700; font-size: 18px; }
-.slogan { font-size: 12px; color: #d9e3f0; }
-.welcome { font-size: 1px; font-weight: 500; }
 .hamburger { font-size: 28px; cursor: pointer; display: none; }
 
 /* ==== Sidebar ==== */
@@ -266,6 +269,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
