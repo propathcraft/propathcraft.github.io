@@ -94,26 +94,28 @@
      target="_blank">💬 Chat on WhatsApp</a>
 
   <!-- ===== JavaScript ===== -->
- <script>
-  // Get the sidebar element
-  const sidebar = document.getElementById('sidebar');
+<script>
+const sidebar = document.getElementById('sidebar');
 
-  // Toggle sidebar on mobile
-  function toggleSidebar() {
-    sidebar.classList.toggle('active');
-  }
+// Toggle sidebar on mobile
+function toggleSidebar() {
+  sidebar.classList.toggle('active');
+}
 
-  // Show the selected section
-  function showSection(id) {
-    // Hide all sections
-    document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
-    
-    // Show the selected section
-    document.getElementById(id).style.display = 'block';
+// Show selected section
+function showSection(id) {
+  document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+  
+  if(window.innerWidth < 1024) sidebar.classList.remove('active');
+}
 
-    // Close sidebar automatically on mobile
-    if (window.innerWidth < 1024) sidebar.classList.remove('active');
-  }
+// Optional: show Services page by default
+document.addEventListener("DOMContentLoaded", function(){
+  showSection('services');
+});
+</script>
+
 </script>
 </body>
 </html>
@@ -299,6 +301,7 @@
       <p>Email: <a href="mailto:infopropathcraft@gmail.com">infopropathcraft@gmail.com</a></p
 ::contentReference[oaicite:0]{index=0}
  
+
 
 
 
