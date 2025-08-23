@@ -207,6 +207,11 @@ header {
   .sidebar { left: -220px; }    /* hidden offscreen left */
   .hamburger { display: block; } /* show hamburger icon */
 }
+.sidebar.active {
+    left: 0 !important;
+    right: auto !important;
+  }
+}
 /* Desktop: sidebar always visible */
 @media(min-width:1024px){
   .sidebar { left: 0; }
@@ -250,6 +255,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
