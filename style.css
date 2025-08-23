@@ -156,29 +156,39 @@ header {
   height: 70px; /* Fixed height for the top bar */
   background: #0a1f44; /* Blue background */
   display: flex;
-  justify-content: center; /* Center the content horizontally */
+  justify-content: space-between; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
   padding: 0 20px;
   position: sticky;
   top: 0;
   z-index: 1003;
+  box-sizing: border-box;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;                  /* space between logo and text */
 }
 
-.brand img {
-  height: 50px; /* Set the logo height to fit within the top bar */
-  width: auto; /* Maintain the aspect ratio */
+/* Logo size */
+.brand img.logo {
+  height: 50px;               /* fixed height */
+  width: auto;                /* keep aspect ratio */
+  object-fit: contain;        /* make sure it doesn’t overflow */
 }
 
-/* Optional: Adjust the welcome text position */
+/* Brand text (title + slogan) */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Welcome text */
 .welcome {
-  position: absolute;
-  bottom: 10px; /* Position it near the bottom of the top bar */
-  color: #fff;
   font-size: 14px;
+  color: #fff;
 }
-
-
-.hamburger { font-size: 28px; cursor: pointer; display: none; }
 
 /* ==== Sidebar ==== */
 /* ==== Sidebar ==== */
@@ -269,6 +279,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
