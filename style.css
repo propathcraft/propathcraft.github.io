@@ -202,6 +202,11 @@ header {
 }
 .sidebar a:hover { background: #253147; }
 
+/* Mobile: hide sidebar by default */
+@media(max-width:1023px){
+  .sidebar { left: -220px; }    /* hidden offscreen left */
+  .hamburger { display: block; } /* show hamburger icon */
+}
 /* Desktop: sidebar always visible */
 @media(min-width:1024px){
   .sidebar { left: 0; }
@@ -245,6 +250,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
