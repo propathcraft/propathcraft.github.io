@@ -68,10 +68,8 @@ header {
   text-decoration: none;
   z-index: 1100;
 }
+.wa-float:hover { background: #1ebe57; }
 
-.wa-float:hover {
-  background: #1ebe57;
-}
 
 
 /* Call Button */
@@ -96,36 +94,6 @@ header {
   padding: 30px 0;
   background: #f7f8fb;
   text-align: center;
-}
-
-/* 📱 Mobile: Horizontal scroll */
-.slides {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 20px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-.slides::-webkit-scrollbar { display: none; }
-
-/* Each slide card */
-.slide {
-  flex: 0 0 85%;  /* mobile: one card fills width */
-  max-width: 350px;
-  background: #fff;
-  padding: 16px;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  scroll-snap-align: center;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-@media (hover: hover) {
-  .slide:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  }
 }
 
 /* Service Images */
@@ -266,7 +234,6 @@ header {
 }
 .slide img { width: 100%; border-radius: 12px; margin-bottom: 12px; }
 .slide h2 { font-size: 20px; margin: 8px 0; color: #0a1f44; }
-.wa-float { margin-top: 10px; display: inline-block; }
 
 /* Desktop grid layout for slides */
 @media(min-width:1024px){
@@ -278,6 +245,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
