@@ -221,9 +221,7 @@ header {
   .sidebar { left: 0;  right: auto;}
   .hamburger { display: none; }
   main { margin-left: 220px; }
-}
-@media(max-width:1023px){ .hamburger { display: block; }
-  .sidebar { left: -220px; right: auto; }  /* hidden initially */                      
+
 }
 
 /* ==== Slides ==== */
@@ -261,6 +259,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
