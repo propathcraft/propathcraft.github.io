@@ -153,23 +153,27 @@ header {
 /* ==== Topbar ==== */
 
 .topbar {
-  height: 70px;
+  height: 140px;
   background: #0a1f44;
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+  justify-content: center;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1003;
 }
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.topbar .logo {
+  height: 70px; /* adjust as needed */
+  margin-bottom: 5px;
 }
+
+.topbar .welcome {
+  font-size: 16px;
+  font-weight: 500;
+}
+
 
 .brand img { height: 50px; }
 .brand-title { font-weight: 700; font-size: 20px; }
@@ -266,6 +270,7 @@ header {
   }
   .slide { flex: unset; max-width: 100%; }
 }
+
 
 
 
