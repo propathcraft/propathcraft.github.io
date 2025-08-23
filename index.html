@@ -132,6 +132,7 @@
       <img src="logo.png" alt="ProPathCraft Logo">
       <div class="brand-title">ProPathCraft</div>
       <div class="slogan">Your Career, Our Craft</div>
+      <div class="hamburger" onclick="toggleSidebar()">☰</div>
     </div>
   </div>
 
@@ -192,15 +193,16 @@
 
   <!-- JS -->
   <script>
-    function showSection(id){
-      document.querySelectorAll('main section').forEach(s=>s.style.display='none');
-      document.getElementById(id).style.display='block';
+    function toggleSidebar(){
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('active');
     }
     document.addEventListener('DOMContentLoaded',()=>{ showSection('home'); });
   </script>
 
 </body>
 </html>
+
 
 
 
