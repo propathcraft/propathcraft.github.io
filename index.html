@@ -1,107 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProPathCraft</title>
-<style>
-body { margin:0; font-family: Arial; display:flex; }
-.sidenav { width:200px; background:#111; height:100vh; padding-top:20px; position:fixed; }
-.sidenav a { color:white; display:block; padding:12px 20px; text-decoration:none; margin-bottom:5px; }
-.sidenav a:hover { background:#575757; }
-.main { margin-left:220px; padding:20px; flex:1; text-align:center; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProPathCraft - Resume Services</title>
+<link rel="stylesheet" href="style.css">
+  </head>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fb;
+      color: #1e2a3a;
+      min-height: 100vh;
+    }
 
-.logo { width:120px; margin-bottom:15px; }
+    /* Topbar */
+    .topbar {
+      height: 60px;
+      background: #0a1f44;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+    }
+    .hamburger {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .brand img { height: 36px; }
+    .brand-title { font-weight: 700; letter-spacing: .3px; }
 
-section { padding:60px 0; }
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0; left: -260px;
+      width: 240px; height: 100%;
+      background: #141a24;
+      color: #fff;
+      padding: 80px 14px 20px;
+      transition: left .28s ease;
+      z-index: 1002;
+      box-shadow: 2px 0 12px rgba(0,0,0,.25);
+    }
+    .sidebar.active { left: 0; }
+    .sidebar a {
+      display: block;
+      color: #e6ecff;
+      text-decoration: none;
+      padding: 12px 12px;
+      margin-bottom: 10px;
+      background: #1b2432;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .sidebar a:hover { background: #253147; }
 
-.slides { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:20px; padding:20px 0; }
-.slides::-webkit-scrollbar { display:none; }
-.slide { flex:0 0 80%; max-width:350px; background:#fff; padding:16px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1); scroll-snap-align:center; text-align:center; }
-.slide img { width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:12px; }
-.wa-btn { background:#25D366; color:white; padding:10px 16px; text-decoration:none; border-radius:8px; display:inline-block; margin:5px; font-weight:600; }
-.call-btn { background:#007bff; color:white; padding:10px 16px; text-decoration:none; border-radius:8px; display:inline-block; margin:5px; font-weight:600; }
+    /* Main wrapper */
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 80px;
+    }
 
-@media(min-width:1024px){
-  .slides { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; gap:24px; }
-  .slide { flex:unset; max-width:100%; }
-}
+    /* Sections */
+    section { display: none; }
+    section.active { display: block; }
 
-html { scroll-behavior: smooth; }
-</style>
+    /* Titles */
+    h1.page-title {
+      font-size: 28px;
+      margin: 12px 0 14px;
+      color: #0a1f44;
+      text-align: center;
+    }
+    .subtitle {
+      text-align: center;
+      color: #50607a;
+      margin-bottom: 14px;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 880px;
+      margin: 14px auto 26px;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(10,31,68,.15);
+      background: #fff;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      display: block;
+    }
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+      background: rgba(10,31,68,.6);
+      color: #fff;
+      border: none;
+      padding: 10px 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .nav-btn:hover { background: rgba(10,31,68,.8); }
+    .nav-btn.left { left: 10px; }
+    .nav-btn.right { right: 10px; }
+
+    /* WhatsApp floating button */
+    .wa-float {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      background: #25D366;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(37,211,102,.4);
+      text-decoration: none;
+      z-index: 1100;
+    }
+    .wa-float:hover { background: #1ebe57; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #7a879a;
+      margin-top: 28px;
+      font-size: 14px;
+    }
+
+    /* Larger screens: optional fixed sidebar */
+    @media (min-width: 1024px) {
+      .sidebar { left: 0; }
+      .topbar .hamburger { visibility: hidden; }
+      .wrapper { margin-left: 240px; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="sidenav">
-  <a href="#home">Home</a>
-  <a href="#services">Services</a>
-  <a href="#feedback">Feedback</a>
-  <a href="#rating">Rating</a>
-  <a href="#about">About</a>
-</div>
-
-<div class="main">
-
-  <!-- Home Section -->
-  <section id="home">
-    <header>
-      <img src="logo.png" alt="ProPathCraft Logo" class="logo">
-      <h1>Welcome to ProPathCraft</h1>
-      <p>Your Career, Our Craft</p>
-    </header>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="slides">
-      <div class="slide">
-        <img src="basic.jpg" alt="Basic Resume">
-        <h3>Basic Resume</h3>
-        <p>Perfect for freshers & entry-level professionals.</p>
-        <a href="https://wa.me/917972422618?text=I%20want%20Basic%20Resume" target="_blank" class="wa-btn">WhatsApp</a>
-        <a href="tel:+917972422618" class="call-btn">Call Now</a>
-      </div>
-      <div class="slide">
-        <img src="standard.jpg" alt="Professional Resume">
-        <h3>Professional Resume</h3>
-        <p>Modern, ATS-friendly design for job seekers.</p>
-        <a href="https://wa.me/917972422618?text=I%20want%20Professional%20Resume" target="_blank" class="wa-btn">WhatsApp</a>
-        <a href="tel:+917972422618" class="call-btn">Call Now</a>
-      </div>
-      <div class="slide">
-        <img src="premium.jpg" alt="Premium Resume">
-        <h3>Premium Resume</h3>
-        <p>Includes Resume + LinkedIn optimization.</p>
-        <a href="https://wa.me/917972422618?text=I%20want%20Premium%20Resume" target="_blank" class="wa-btn">WhatsApp</a>
-        <a href="tel:+917972422618" class="call-btn">Call Now</a>
-      </div>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+    <div class="brand">
+      <img src="logo.png" alt="ProPathCraft Logo">
+      <div class="brand-title">ProPathCraft</div>
     </div>
-  </section>
+  </div>
 
-  <!-- Feedback Section -->
-  <section id="feedback">
-    <h2>Feedback</h2>
-    <p>Leave your feedback here.</p>
-  </section>
+  <!-- Sidebar -->
+  <nav id="sidebar" class="sidebar">
+    <a href="#" onclick="showSection('home')">🏠 Home</a>
+    <a href="#" onclick="showSection('services')">📄 Our Services</a>
+    <a href="#" onclick="showSection('feedback')">🗣 Audience Feedback</a>
+    <a href="#" onclick="showSection('rating')">⭐ Rating & Feedback</a>
+    <a href="#" onclick="showSection('about')">ℹ️ About Us</a>
+  </nav>
 
-  <!-- Rating Section -->
-  <section id="rating">
-    <h2>Rating</h2>
-    <p>Check our ratings and reviews.</p>
-  </section>
+  <!-- Main -->
+  <main class="wrapper">
+    <!-- Home -->
+    <section id="home" class="active">
+      <h1 class="page-title">Welcome to ProPathCraft</h1>
+      <p class="subtitle">Your Career, Our Path.</p>
+      <footer>© 2025 ProPathCraft. All rights reserved.</footer>
+    </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>ProPathCraft helps you create professional resumes and LinkedIn profiles.</p>
-    <p>Contact us: <a href="mailto:infopropathcraft@gmail.comcom">info@propathcraft.com</a></p>
-  </section>
+    <!-- Services (SLIDESHOW UNDER TITLE) -->
+<section id="services">
+  <h1 class="page-title">Our Services</h1>
+  <p class="subtitle">Swipe or use arrows to view plans</p>
 
-</div>
+  <div class="manual-slider">
+    <div class="slide active">
+      <img src="basic.jpg" alt="Basic Resume Service">
+      <h3>Basic Resume Service</h3>
+      <a class="wa-float"
+         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Basic%20Resume%20Service."
+         target="_blank" rel="noopener">
+         💬 Chat on WhatsApp
+      </a>
+    </div>
 
+    <div class="slide">
+      <img src="standard.jpg" alt="Standard Resume Service">
+      <h3>Standard Resume Service</h3>
+      <a class="wa-float"
+         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Standard%20Resume%20Service."
+         target="_blank" rel="noopener">
+         💬 Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="slide">
+      <img src="premium.jpg" alt="Premium Resume Service">
+      <h3>Premium Resume Service</h3>
+      <a class="wa-float"
+         href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20Premium%20Resume%20Service."
+         target="_blank" rel="noopener">
+         💬 Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Navigation buttons -->
+  <button class="nav-btn left" onclick="moveSlide(-1)">❮</button>
+  <button class="nav-btn right" onclick="moveSlide(1)">❯</button>
+</section>
+
+
+    <!-- Audience Feedback -->
+    <section id="feedback">
+      <h1 class="page-title">Audience Feedback</h1>
+      <p class="subtitle">Coming soon… showcase testimonials from your customers here.</p>
+      <footer>© 2025 ProPathCraft. All rights reserved.</footer>
+    </section>
+
+    <!-- Rating & Feedback -->
+    <section id="rating">
+      <h1 class="page-title">Rating & Feedback</h1>
+      <p class="subtitle">Ask visitors to rate you and leave feedback via WhatsApp.</p>
+      <footer>© 2025 ProPathCraft. All rights reserved.</footer>
+    </section>
+
+    <!-- About Us -->
+    <section id="about">
+      <h1 class="page-title">About Us</h1>
+      <p class="subtitle">We craft ATS-friendly resumes and help you present your best professional self.</p>
+     <p>ProPathCraft was founded with a single motive: to help job seekers craft professional,
+     ATS-friendly resumes that truly reflect their career journey. We believe every career path
+     deserves a crafted resume that stands out.</p>
+
+  <h3>Contact Us</h3>
+  <p>Email: infopropathcraft@gmail.com</p>
+  <p>Phone: +91 7972422618</p>
+  <p>Website: www.propathcraft.com</p> 
+      <footer>© 2025 ProPathCraft. All rights reserved.</footer>
+    </section>
+  </main>
+
+  <!-- WhatsApp floating chat -->
+  <a class="wa-float"
+     href="https://wa.me/917972422618?text=Hi%20ProPathCraft%2C%20I%27m%20interested%20in%20your%20resume%20services."
+     target="_blank" rel="noopener">
+     💬 Chat on WhatsApp
+  </a>
+
+  <script>
+    // Sidebar toggle (mobile)
+    const sidebar = document.getElementById('sidebar');
+    function toggleSidebar() {
+      sidebar.classList.toggle('active');
+    }
+
+    // Section switching
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      // close sidebar on mobile after navigation
+      if (window.innerWidth < 1024) sidebar.classList.remove('active');
+    }
+
+    
+  </script>
 </body>
-</html>
+</html>                         now tellme this code is correct because of css i am confused
+
+
 
 
 
