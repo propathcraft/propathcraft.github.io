@@ -25,10 +25,13 @@
       align-items: center;
     }
 
+    /* Logo with subtle background */
     nav img {
-      width: 50px;
+      width: 80px;
       height: auto;
       border-radius: 8px;
+      background-color: rgba(255,255,255,0.8);
+      padding: 5px;
     }
 
     .menu {
@@ -47,7 +50,6 @@
       color: #2a9d8f;
     }
 
-    /* Hamburger button (hidden on desktop) */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -62,7 +64,6 @@
       border-radius: 2px;
     }
 
-    /* Mobile menu (hidden by default) */
     .menu.mobile {
       display: none;
       flex-direction: column;
@@ -74,22 +75,42 @@
       margin: 10px 0;
     }
 
-    /* Header */
+    /* Modern Header */
     header {
-      background: #2a9d8f;
+      background: linear-gradient(135deg, #2a9d8f, #264653);
       color: #fff;
-      padding: 70px 20px;
+      padding: 100px 20px 80px;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
 
     header p {
-      margin: 10px 0 0;
-      font-size: 1.2rem;
+      margin: 15px 0 30px;
+      font-size: 1.3rem;
+    }
+
+    /* CTA Button */
+    .cta-btn {
+      background-color: #e9c46a;
+      color: #264653;
+      font-weight: bold;
+      padding: 14px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #f4a261;
+      color: #fff;
     }
 
     section {
@@ -131,13 +152,22 @@
       text-decoration: none;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .menu.desktop {
         display: none;
       }
       .hamburger {
         display: flex;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .cta-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -146,19 +176,18 @@
   <!-- Navbar -->
   <nav>
     <img src="logo.png" alt="Propath Craft Logo">
-    <!-- Desktop Menu -->
     <div class="menu desktop">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
-    <!-- Hamburger Button -->
     <div class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </nav>
+
   <!-- Mobile Menu -->
   <div class="menu mobile" id="mobileMenu">
     <a href="#about" onclick="toggleMenu()">About</a>
@@ -170,6 +199,7 @@
   <header>
     <h1>Propath Craft</h1>
     <p>ATS-Friendly Resume & Career Solutions</p>
+    <a href="#contact" class="cta-btn">Get Started</a>
   </header>
 
   <!-- About Section -->
@@ -201,9 +231,9 @@
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:infopropathcraft@gmail.com">yourname@example.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/91797422618" target="_blank">Chat with us</a></p>
-    <p>Instagram: <a href="https://https://www.instagram.com/propathcraft" target="_blank">@yourhandle</a></p>
+    <p>Email: <a href="mailto:infopropathcraft@gmail.com">infopropathcraft@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/917972422618" target="_blank">Chat with us</a></p>
+    <p>Instagram: <a href=https://www.instagram.com/propathcraft" target="_blank">@yourhandle</a></p>
   </section>
 
   <!-- Footer -->
@@ -211,7 +241,6 @@
     © 2025 Propath Craft | All Rights Reserved
   </footer>
 
-  <!-- JS for Mobile Menu -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
@@ -220,3 +249,4 @@
   </script>
 </body>
 </html>
+
