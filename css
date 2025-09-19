@@ -1,0 +1,21 @@
+/* Header styling */
+header {
+  background-color: #ffffff; /* white background for contrast */
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo-container .logo {
+  max-width: 200px; /* desktop max size */
+  width: 100%;      /* makes it responsive */
+  height: auto;
+  display: block;
+}
+
+/* Optional: hover effect */
+.logo-container .logo:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
