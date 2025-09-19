@@ -1,252 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Propath Craft</title>
+  <meta name="description" content="Propath Craft - Professional ATS-friendly resume service for job seekers.">
+  <meta name="keywords" content="resume service, ATS-friendly resume, Propath Craft, job application help">
+  <meta name="author" content="Propath Craft">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f9fa;
-      color: #222;
-      scroll-behavior: smooth;
-    }
+    /* Reset & basic styles */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { line-height:1.6; background:#f9f9f9; color:#333; }
 
-    /* Navbar */
-    nav {
-      background: #264653;
-      padding: 12px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    /* Header */
+    header { background:#4CAF50; color:#fff; padding:20px 0; text-align:center; }
+    header img { height:60px; vertical-align:middle; }
+    header h1 { display:inline; margin-left:10px; font-size:2rem; vertical-align:middle; }
 
-    /* Logo with subtle background */
-    nav img {
-      width: 80px;
-      height: auto;
-      border-radius: 8px;
-      background-color: rgba(255,255,255,0.8);
-      padding: 5px;
-    }
+    /* Navigation */
+    nav { margin-top:10px; }
+    nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
 
-    .menu {
-      display: flex;
-      gap: 20px;
-    }
+    /* Sections */
+    section { padding:60px 20px; max-width:1000px; margin:0 auto; }
+    h2 { font-size:2rem; margin-bottom:20px; color:#4CAF50; }
+    p { margin-bottom:15px; }
 
-    .menu a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+    /* Buttons */
+    .btn { display:inline-block; background:#4CAF50; color:#fff; padding:10px 20px; text-decoration:none; border-radius:5px; transition:0.3s; }
+    .btn:hover { background:#45a049; }
 
-    .menu a:hover {
-      color: #2a9d8f;
-    }
+    /* Contact */
+    .contact a { display:inline-block; margin:10px; text-decoration:none; color:#fff; background:#333; padding:10px 15px; border-radius:5px; }
+    .contact a:hover { background:#555; }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
+    /* Footer */
+    footer { background:#333; color:#fff; text-align:center; padding:20px; }
 
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #fff;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
-
-    .menu.mobile {
-      display: none;
-      flex-direction: column;
-      background: #264653;
-      padding: 10px;
-    }
-
-    .menu.mobile a {
-      margin: 10px 0;
-    }
-
-    /* Modern Header */
-    header {
-      background: linear-gradient(135deg, #2a9d8f, #264653);
-      color: #fff;
-      padding: 100px 20px 80px;
-      text-align: center;
-      position: relative;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-
-    header p {
-      margin: 15px 0 30px;
-      font-size: 1.3rem;
-    }
-
-    /* CTA Button */
-    .cta-btn {
-      background-color: #e9c46a;
-      color: #264653;
-      font-weight: bold;
-      padding: 14px 30px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    .cta-btn:hover {
-      background-color: #f4a261;
-      color: #fff;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      color: #2a9d8f;
-      margin-bottom: 20px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: #fff;
-      padding: 18px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-      text-align: center;
-    }
-
-    footer {
-      background: #264653;
-      color: #fff;
-      text-align: center;
-      padding: 16px;
-      margin-top: 30px;
-    }
-
-    a {
-      color: #2a9d8f;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .menu.desktop {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .cta-btn {
-        padding: 12px 24px;
-        font-size: 0.9rem;
-      }
+    /* Responsive */
+    @media(max-width:768px){
+      header h1 { display:block; margin-top:10px; font-size:1.5rem; }
+      nav a { display:block; margin:5px 0; }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+
+<!-- Header -->
+<header>
+  <img src="logo.png" alt="Propath Craft Logo">
+  <h1>Propath Craft</h1>
   <nav>
-    <img src="logo.png" alt="Propath Craft Logo">
-    <div class="menu desktop">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </nav>
+</header>
 
-  <!-- Mobile Menu -->
-  <div class="menu mobile" id="mobileMenu">
-    <a href="#about" onclick="toggleMenu()">About</a>
-    <a href="#services" onclick="toggleMenu()">Services</a>
-    <a href="#contact" onclick="toggleMenu()">Contact</a>
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>Propath Craft is dedicated to creating professional, ATS-friendly resumes that help you land your dream job.</p>
+  <p>Our team focuses on quality, clarity, and results-oriented resumes for job seekers of all experience levels.</p>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <p>We provide:</p>
+  <ul>
+    <li>ATS-friendly resume design</li>
+    <li>Cover letters tailored to your role</li>
+    <li>LinkedIn profile optimization</li>
+    <li>Career consultation</li>
+  </ul>
+  <a href="#contact" class="btn">Get Started</a>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Reach out to us for resume services or inquiries:</p>
+  <div class="contact">
+    <a href="mailto:info@propathcraft.com">Email Us</a>
+    <a href="https://wa.me/917972422618" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/propathcraft/" target="_blank">Instagram</a>
   </div>
+</section>
 
-  <!-- Header -->
-  <header>
-    <h1>Propath Craft</h1>
-    <p>ATS-Friendly Resume & Career Solutions</p>
-    <a href="#contact" class="cta-btn">Get Started</a>
-  </header>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Propath Craft. All rights reserved.</p>
+</footer>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About</h2>
-    <p>We craft ATS-friendly resumes and LinkedIn profiles so you get noticed by recruiters. 
-    Our mission is to help job seekers land interviews faster with professional career tools.</p>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Resume Writing</h3>
-        <p>ATS-optimized resumes tailored to your target role.</p>
-      </div>
-      <div class="card">
-        <h3>LinkedIn Profile</h3>
-        <p>Profile optimization so recruiters easily find you.</p>
-      </div>
-      <div class="card">
-        <h3>Career Guidance</h3>
-        <p>Interview tips, job search strategy & personalized advice.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:infopropathcraft@gmail.com">infopropathcraft@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/917972422618" target="_blank">Chat with us</a></p>
-    <p>Instagram: <a href=https://www.instagram.com/propathcraft/" target="_blank">@propathcraft</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 Propath Craft | All Rights Reserved
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-    }
-  </script>
 </body>
 </html>
-
